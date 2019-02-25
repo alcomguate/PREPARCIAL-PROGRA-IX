@@ -1,0 +1,98 @@
+﻿@model PREPARCIAL.Models.Alumno
+
+@{
+    ViewBag.Title = "Consulta";
+}
+
+<h2>Alumnos de programación IX</h2>
+
+<div>
+    <h4>Consulta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label class="control-label col-md-2">Primer nombre:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.primer_nombre)
+        </dd>
+
+        <dt>
+            <label class="control-label col-md-2">Segundo nombre:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.segundo_nombre)
+        </dd>
+
+        <dt>
+            <label class="control-label col-md-2">Tercer nombre:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tercer_nombre)
+        </dd>
+
+        <dt>
+            <label class="control-label col-md-2">Primer apellido:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.primer_apellido)
+        </dd>
+
+        <dt>
+            <label class="control-label col-md-2">Segundo apellido:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.segundo_apellido)
+        </dd>
+
+        <dt>
+            <label class="control-label col-md-2">Fecha de nacimiento:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fec_nacimiento)
+        </dd>
+
+        <dt>
+            <label class="control-label col-md-2">Dirección:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            <label class="control-label col-md-2">Correo electrónico:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            <label class="control-label col-md-2">Teléfono célular:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel_celular)
+        </dd>
+
+        <dt>
+            <label class="control-label col-md-2">Teléfono domiciliar:</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel_domicilio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Modificar", "Edit", new { id = Model.carne }) |
+    @Html.ActionLink("Volver", "Index")
+</p>

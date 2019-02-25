@@ -1,0 +1,120 @@
+﻿@model PREPARCIAL.Models.Alumno
+
+@{
+    ViewBag.Title = "Nuevo registro";
+}
+
+<h2>Alumnos de programación IX</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Alumno</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2">Carné:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.carne, new { htmlAttributes = new { @class = "form-control", @required = "true", @type = "number", @max = "9999999999", @maxlength = "10"} })
+                @Html.ValidationMessageFor(model => model.carne, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Primer nombre:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.primer_nombre, new { htmlAttributes = new { @class = "form-control", @required = "true", @maxlength = "50" } })
+                @Html.ValidationMessageFor(model => model.primer_nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Segundo nombre:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.segundo_nombre, new { htmlAttributes = new { @class = "form-control", @required = "true", @maxlength = "50" } })
+                @Html.ValidationMessageFor(model => model.segundo_nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Tercer nombre:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tercer_nombre, new { htmlAttributes = new { @class = "form-control", @maxlength = "50" } })
+                @Html.ValidationMessageFor(model => model.tercer_nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Primer apellido:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.primer_apellido, new { htmlAttributes = new { @class = "form-control", @required = "true", @maxlength = "50" } })
+                @Html.ValidationMessageFor(model => model.primer_apellido, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Segundo apellido:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.segundo_apellido, new { htmlAttributes = new { @class = "form-control", @required = "true", @maxlength = "50" } })
+                @Html.ValidationMessageFor(model => model.segundo_apellido, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Fecha de nacimiento:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fec_nacimiento, new { htmlAttributes = new { @class = "form-control datepicker", @id = "datepicker", @type = "date", @required = "true" } })
+                @Html.ValidationMessageFor(model => model.fec_nacimiento, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Dirección:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.direccion, new { htmlAttributes = new { @class = "form-control", @required = "true", @maxlength = "200" } })
+                @Html.ValidationMessageFor(model => model.direccion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Correo electrónico:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @required = "true", @maxlength = "75" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Teléfono célular:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tel_celular, new { htmlAttributes = new { @class = "form-control", @required = "true", @maxlength = "8" } })
+                @Html.ValidationMessageFor(model => model.tel_celular, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Teléfono domiciliar:</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tel_domicilio, new { htmlAttributes = new { @class = "form-control", @maxlength = "8" } })
+                @Html.ValidationMessageFor(model => model.tel_domicilio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Grabar" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Volver", "Index")
+</div>
+
+
